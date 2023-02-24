@@ -2,39 +2,20 @@ package main
 
 import "fmt"
 
-// create a class called dog
+// created a type Dog with three fields
 type Dog struct {
 	Name   string
 	Specie string
 	Color  string
 }
 
+// created a type Fish with five fields
 type Fish struct {
 	Name     string
 	Specie   string
 	Color    string
 	Size     int
 	Venomous bool
-}
-
-func (d Dog) Speak() string {
-	return "Ruff Ruff"
-}
-
-func (d Dog) NumberOflegs() int {
-	return 4
-}
-
-func (f Fish) Speak() string {
-	return "Blub Blub Blub"
-}
-
-func (f Fish) NumberOfSpines() int {
-	return 1
-}
-
-func (d Dog) Species() string {
-	return "Great Dane"
 }
 
 func (d Dog) GetName() string {
@@ -44,11 +25,25 @@ func (d Dog) GetName() string {
 func (f Fish) GetName() string {
 	return f.Name
 }
+
+func (d Dog) Species() string {
+	return "Great Dane"
+}
+
 func (f Fish) Species() string {
 	return "Deep Sea fish"
 }
 
-//construct for interfaces
+func (d Dog) Speak() string {
+	return "Ruff Ruff"
+}
+
+func (f Fish) Speak() string {
+	return "Blub Blub Blub"
+}
+
+//create an interfaces called Animals and implemented
+//and creatde three method signatures
 type Animal interface {
 	GetName() string
 	Speak() string
@@ -56,12 +51,13 @@ type Animal interface {
 }
 
 func main() {
-	//create obj cat
+	//create obj of type Dog and assigned
 	dog := Dog{
 		Name:   "Krypto",
-		Specie: "Great Dane",
+		Specie: "Great_Dane",
 		Color:  "White",
 	}
+	//create obj of type Fish and assigned
 	fish := Fish{
 		Name:     "Nemo",
 		Specie:   "Clown fish",
@@ -71,7 +67,8 @@ func main() {
 	}
 	PrintInfo(dog)
 	PrintInfo(fish)
-	//fmt.Println(doggo.Breed)
+	//fmt.Println(dog.Name)
+	//fmt.Println(fish.Name)
 
 }
 
@@ -80,3 +77,5 @@ func PrintInfo(a Animal) {
 		"is named", a.GetName(),
 		"and is of breed:", a.Species())
 }
+
+/*interfaces can be described as a named collection of methods*/
