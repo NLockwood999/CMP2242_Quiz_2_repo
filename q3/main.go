@@ -13,7 +13,7 @@ func printLetters() {
 	}
 }
 
-//main is a go routine
+//main itself is a go routine
 func main() {
 	//a function becomes go routine by adding go at the beginning
 	go printLetters()

@@ -27,15 +27,15 @@ func (f Fish) GetName() string {
 }
 
 func (d Dog) Species() string {
-	return "Great Dane"
+	return d.Specie
 }
 
 func (f Fish) Species() string {
-	return "Deep Sea fish"
+	return f.Species()
 }
 
 func (d Dog) Speak() string {
-	return "Ruff Ruff"
+	return "ruff ruff"
 }
 
 func (f Fish) Speak() string {
